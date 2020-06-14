@@ -1,0 +1,47 @@
+﻿@model c11.Models.Medicament
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Znajdź lek</h1>
+<form method="post" action="/medicaments/search">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Wyszukaj" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Nazwa
+            </th>
+            <th>
+                Opis
+            </th>
+            <th>
+                Typ
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => modelItem.Type)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="modelItem.IdMedicament">Edit</a> |
+                    <a asp-action="Details" asp-route-id="modelItem.IdMedicament">Details</a> |
+                    <a asp-action="Delete" asp-route-id="modelItem.IdMedicament">Delete</a>
+                </td>
+            </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<c11.Models.Doctor>
+@{ 
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h1>Kadra lekarska</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in Model){
+            <tr>
+                <td>@doctor.FirstName</td>
+                <td>@doctor.LastName</td>
+                <td>@doctor.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

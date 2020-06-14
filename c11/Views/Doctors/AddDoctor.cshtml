@@ -1,0 +1,26 @@
+﻿@model c11.Models.Doctor
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Dodaj lekarza</h1>
+<form class="col s12" method="post" action="/doctors/adddoctor">
+    <div class="row">
+        <div class="input-field col s6">
+            <label for="first_name">First Name</label>
+            @Html.EditorFor(d => d.FirstName)
+            <span>@Html.ValidationMessageFor(d => d.FirstName)</span>
+        </div>
+        <div class="input-field col s6">
+            <label for="last_name">Last Name</label>
+            @Html.EditorFor(d => d.LastName)
+            <span>@Html.ValidationMessageFor(d => d.LastName)</span>
+        </div>
+        <div class="input-field col s12">
+            <label for="email">Email</label>
+            @Html.EditorFor(d => d.Email)
+            <span>@Html.ValidationMessageFor(d => d.Email)</span>
+        </div>
+    </div>
+    <input type="submit" value="Wyślij" class="btn" />
+</form>

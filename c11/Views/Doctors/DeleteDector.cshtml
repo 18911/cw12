@@ -1,0 +1,23 @@
+﻿@model c11.Models.Doctor
+@{
+    ViewData["Title"] = "DeleteDector";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DeleteDector</h1>
+<form method="post" action="doctors/deletedoctor">
+    <div class="row">
+        <div class="input-field col s6">
+            <label for="first_name">First Name</label>
+            @Html.EditorFor(d => d.FirstName)
+            <span>@Html.ValidationMessageFor(d => d.FirstName)</span>
+        </div>
+        <div class="input-field col s6">
+            <label for="last_name">Last Name</label>
+            @Html.EditorFor(d => d.LastName)
+            <span>@Html.ValidationMessageFor(d => d.LastName)</span>
+        </div>
+    </div>
+    <input type="submit" value="Wyślij" class="btn" />
+</form>
+
